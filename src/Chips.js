@@ -10,6 +10,7 @@ const Enteries = styled.div`
 
 const Input = styled.input`
     border: none;
+    outline: none;
 `
 const ListItems = styled.div`
 box-shadow: 1px 1px 3px 1px #bfbfbf;
@@ -49,26 +50,26 @@ class Chips extends Component {
         text:"",
         value: [],
         users: [
-            {
-                name: "Nick Giannopoulos",
-                email: "n.giannopoulus@example.com",
-                image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEXw8PCLlNT19fKEjtKJktSfptnd3uqkqtrZ2+mCjNLh4uv39vJ9iNHe4Ouaodj6+fPr7O/KzeWvtN2PmNWUnNbXA9SsAAAB50lEQVR4nO3cW26DAAxFwQQKLaTQ5/7X2g1Uwh82dZo5C7hihPhDvlwkSZIkSdJDt86R3k+eSmyYlvG415dzpzIbnp+ux40hYd5UZoSENVOZERLWTGVGSFgzlRkhYc1UZoSENVOZERLWTGVGSFgzlRkhYc1UZoSENVOZERLWTGVGSFgzldlDCAON82047C00tZwu/JwC7ftzoO/Q1Hay8HL8bobhti6R1zO9RcbOBsaax8AX9jQ1ffpIhIT9IyTsHyFh/wgJ+0dI2D9Cwv4REvaPkLB/hIT9IyTsHyFh+4YtJrz99YP+WuTUw/YREV730NmInlcjQsDrNbLU9GpEYk3/iSIkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk/E/CyMWBuxbukYMQX3csHLfY5Y87Ft739RZCwoKpzAgJa6YyIySsmcqMkLBmKjNCwpqpzAgJa6YyIySsmcqMkLBmKjNCwpqpzAgJa6YyIySsmcrsFnyswMmLxKlg75EbDusUeqyP7dSpeQ0J59fIFYfgPyLnTi176EWHTq70LHgIhrBxhIT9IyTsHyFh/wgJ+0dI2D9Cwv4REvaPkLB/hIT9IyTsH+HjCJfIqYeexYRr6NRDzz5jv6QcH3roWwgoSZIkSdI/7AcDVnKZ4WlFUwAAAABJRU5ErkJggg=="
-            },
-            {
-                name: "Narayana Garner",
-                email: "n.garner@example.com",
-                image: ""
-            },
-            {
-                name: "Anita Gros",
-                email: "a.gros@example.com",
-                image: ""
-            },
-            {
-                name: "Megan Smith",
-                email: "m.smith@example.com",
-                image: ""
-            }
+            // {
+            //     name: "Nick Giannopoulos",
+            //     email: "n.giannopoulus@example.com",
+            //     image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEXw8PCLlNT19fKEjtKJktSfptnd3uqkqtrZ2+mCjNLh4uv39vJ9iNHe4Ouaodj6+fPr7O/KzeWvtN2PmNWUnNbXA9SsAAAB50lEQVR4nO3cW26DAAxFwQQKLaTQ5/7X2g1Uwh82dZo5C7hihPhDvlwkSZIkSdJDt86R3k+eSmyYlvG415dzpzIbnp+ux40hYd5UZoSENVOZERLWTGVGSFgzlRkhYc1UZoSENVOZERLWTGVGSFgzlRkhYc1UZoSENVOZERLWTGVGSFgzldlDCAON82047C00tZwu/JwC7ftzoO/Q1Hay8HL8bobhti6R1zO9RcbOBsaax8AX9jQ1ffpIhIT9IyTsHyFh/wgJ+0dI2D9Cwv4REvaPkLB/hIT9IyTsHyFh+4YtJrz99YP+WuTUw/YREV730NmInlcjQsDrNbLU9GpEYk3/iSIkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk/E/CyMWBuxbukYMQX3csHLfY5Y87Ft739RZCwoKpzAgJa6YyIySsmcqMkLBmKjNCwpqpzAgJa6YyIySsmcqMkLBmKjNCwpqpzAgJa6YyIySsmcrsFnyswMmLxKlg75EbDusUeqyP7dSpeQ0J59fIFYfgPyLnTi176EWHTq70LHgIhrBxhIT9IyTsHyFh/wgJ+0dI2D9Cwv4REvaPkLB/hIT9IyTsH+HjCJfIqYeexYRr6NRDzz5jv6QcH3roWwgoSZIkSdI/7AcDVnKZ4WlFUwAAAABJRU5ErkJggg=="
+            // },
+            // {
+            //     name: "Narayana Garner",
+            //     email: "n.garner@example.com",
+            //     image: ""
+            // },
+            // {
+            //     name: "Anita Gros",
+            //     email: "a.gros@example.com",
+            //     image: ""
+            // },
+            // {
+            //     name: "Megan Smith",
+            //     email: "m.smith@example.com",
+            //     image: ""
+            // }
         ]
     }
 
@@ -107,8 +108,8 @@ class Chips extends Component {
         e.preventDefault();
         this.setState({            
             text:e.target.value,
-            users: this.state.users.filter(user => user.name.toLowerCase().includes(e.target.value.toLowerCase()))
-
+            users: this.users.filter(user => user.name.toLowerCase().includes(e.target.value.toLowerCase()))
+            .filter(x => !this.state.users.map(y => y.name.toLowerCase()).includes(x.name.toLowerCase()))
         })
         
     }
@@ -150,7 +151,7 @@ class Chips extends Component {
                     </button>
                         </div>
                     ))}
-                    <Input type="text" value={this.state.text} onClick={this.showList} onFocus={this.showList} onChange={this.handleChange}  />
+                    <Input type="text" value={this.state.text} onClick={this.showList} onFocus={this.showList} onInput={this.handleChange}  />
 
                 </Enteries>
                 {this.state.show ?
